@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bar Chart JS</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Sorting Algorithms visualizer</h1>
+            <div class="controls">
+                <button id="random">Randomize</button>
+                <button id="solve">Solve</button>
+                <div class="slideContainer">
+                    <input type="range" min="1" max="100" value="10" class="slider" id="myRange">
+                    <p>Array Size: <span id="demo"></span></p>
+                  </div>
+            </div>
+            <canvas id="canvas" width="200" height="100"></canvas>
+        </div>
+        <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="index.js"></script>
+
+    </body>
+</html>
