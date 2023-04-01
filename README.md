@@ -1,4 +1,4 @@
-<h1>Chart USing Vanilla Js projet</h1>
+<h1>Chart Using Vanilla Js projet</h1>
 
 ## Description
 <p>
