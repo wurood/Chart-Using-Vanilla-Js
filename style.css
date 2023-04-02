@@ -23,9 +23,10 @@ body {
 
 .title {
     position: absolute;
-    font-size: 40px;
+    font-size: 4vw;
     top: 100px;
     color: #fffcfc;
+    text-align: center;
 }
 
 .controls {
@@ -33,6 +34,9 @@ body {
     top: 200px;
     display: flex;
     gap: 20px;
+    width: 50%;
+    align-content: center;
+    top:29%;
 }
 
 button {
@@ -42,13 +46,13 @@ button {
     border: 3px solid rgb(13, 17, 23);
     border-radius: 15px;
     font-family: cursive;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 2.1vw;
     color: rgb(13, 17, 23);
+    padding: 5px;
 }
 
 .slideContainer {
-    width: 200px;
+    width: 60%;
     position: relative;
     top: 25px;
 }
@@ -89,15 +93,15 @@ button {
 p {
     text-align: center;
     font-family: cursive;
-    font-size: 18px;
+    font-size: 2.1vw;
     font-weight: 400;
     color: #fffcfc;;
 }
 
 canvas{
-    width:500px !important;
+    width:50% !important;
     height:250px !important;
     position: absolute;
-    top:350px;
+    top:50%;
   
   }
