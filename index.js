@@ -54,43 +54,30 @@ randomizeButton.onclick = function () {
 
 };
 
-function isCanvasBlank(canvas) {
-    var blank = document.createElement('canvas');
-    blank.width = canvas.width;
-    blank.height = canvas.height;
-
-    blank.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-    return canvas.toDataURL() == blank.toDataURL();
-}
-solveButton.onclick = function () {
-    sortedArray = bubbleSort(randomSetArray);
-
-    const canvas = document.getElementById("canvas");
-    var chartExist = Chart.getChart("canvas"); 
-    if (chartExist != undefined) 
-        chartExist.destroy();
-    
-    new Chart(canvas, {
+function drawChart() {
+    var ctx_live = document.getElementById("canvas");
+    var myChart = new Chart(ctx_live, {
         type: 'bar',
         data: {
-            labels: sortedArray,
+            labels: [],
             datasets: [
                 {
-                    labels: sortedArray,
-                    data: sortedArray,
+                    data: [],
+                    borderWidth: 1,
                     backgroundColor: [
-                    "#b91d47",
-                    "#00aba9",
-                    "#2b5797",
-                    "#e8c3b9",
-                    "#1e7145"
-                ]
+                        "#b91d47",
+                        "#00aba9",
+                        "#2b5797",
+                        "#e8c3b9",
+                        "#1e7145"
+                    ],
+                    label: 'liveCount'
                 }
             ]
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: true,
             legend: {
                 display: false
             },
@@ -122,4 +109,15 @@ solveButton.onclick = function () {
     });
 
 
+    var getData = function () {
+        myChart.data.labels = sortedArray;
+        myChart.data.datasets[0].data = sortedArray;
+        myChart.update();
+    };
+
+    setInterval(getData, 100);
+}
+solveButton.onclick = function () {
+    sortedArray = bubbleSort(randomSetArray);
+    drawChart();
 };
